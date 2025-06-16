@@ -4,8 +4,9 @@ def find(current_schedule):
     print(f"Поиск занятия '{class_name}':")
     for day, classes in current_schedule.items():
         for c in classes:
-            if c.lower() == class_name.lower():
-                print(f" - {day}")
-                f = True
-    if not f:
-        print("Занятие не найдено.")
+            count = [c.lower() for c in classes].count(class_name.lower())
+            if count > 0:
+                print(f" - {day} (встречается {count} раз(а))")
+                f = True      
+    if f == 0:
+        print("Занятие не найдено в расписании.")
