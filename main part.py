@@ -4,6 +4,7 @@ from add import add
 from delete import delete
 from clear import clear_day
 from clear import clear_full
+from find import find
 
 schedule = {
     "Понедельник": [],
@@ -21,13 +22,14 @@ def func():
         print("Меню: ")
         print("")
         print("1. Показать расписание")
-        print("2. Добавить расписание")
+        print("2. Добавить занятие")
         print("3. Удалить занятие")
         print("4. Очистить расписание на день")
         print("5. Очистить расписание полностью и создать новое")
+        print("6. Поиск занятия в расписании")
         print("0. Выход")
         print("")
-        choice = input("Выберите действие (0-5): ")
+        choice = input("Выберите действие (0-6): ")
         if choice == '1':
             screen(schedule)
         elif choice == '2':
@@ -38,11 +40,13 @@ def func():
             clear_day(schedule)
         elif choice == '5':
             clear_full(schedule)
+        elif choice == '6':
+            find(schedule)
         elif choice == '0':
             print("Выход из программы.")
             break
         else:
-            print("Неверный ввод. Выберите от 0 до 5.")
+            print("Неверный ввод. Выберите от 0 до 6.")
             
             
 if __name__ == "__main__":
