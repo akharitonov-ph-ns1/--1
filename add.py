@@ -9,10 +9,10 @@ def add(current_schedule):
             print("Ошибка. Введите название урока.")
             return
         else:
-            if not check(current_schedule, day, class_name):
+            if check(current_schedule, day, class_name) == 0:
                 current_schedule[day].append(class_name)
                 print(f"Занятие '{class_name}' добавлено на {day}.")
             else:
-                print(f"Ошибка: Занятие '{class_name}' уже было вчера.")
+                print(f"Ошибка: Занятие '{class_name}' уже стоит в соседний день.")
     else:
         print("Неверно введён день недели. Пожалуйста, исправьте ошибку и введите заново.")
