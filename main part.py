@@ -1,3 +1,5 @@
+import json
+
 from display import screen
 from check import check
 from add import add
@@ -5,6 +7,8 @@ from delete import delete
 from clear import clear_day
 from clear import clear_full
 from find import find
+from save_download import save
+from save_download import download
 
 schedule = {
     "Понедельник": [],
@@ -16,7 +20,8 @@ schedule = {
     "Воскресенье": []
 }
 
-def func():
+def main():
+    schedule = download()
     while True:
         print('')
         print("Меню: ")
@@ -43,10 +48,11 @@ def func():
         elif choice == '6':
             find(schedule)
         elif choice == '0':
+            save(schedule)
             print("Выход из программы.")
             break
         else:
-            print("Неверный ввод. Выберите от 0 до 6."       
+            print("Неверный ввод. Выберите от 0 до 6.") 
             
-if __name__ == "__main__":
-    func()
+if name == "main":
+    main()
