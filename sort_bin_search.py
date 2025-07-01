@@ -1,6 +1,8 @@
+from selection import selection_sort
+
 def sort_schedule(schedule):
     for day in schedule:
-        schedule[day].sort()
+        selection_sort(schedule[day])
 
 def binary_search(arr, goal):
     left = 0
@@ -25,4 +27,4 @@ def binary_search(arr, goal):
         else:
             right = mid - 1
 
-    return sorted(result)
+    return result
