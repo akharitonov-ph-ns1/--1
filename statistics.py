@@ -1,4 +1,4 @@
-def statistics(current_schedule):
+def stat(current_schedule):
     print("Загруженность по дням:")
     for day, classes in current_schedule.items():
         if len(classes) > 1 and len(classes) < 5:
