@@ -22,6 +22,3 @@ def delete(current_schedule):
             print(f"В {day} нет занятий для удаления.")
     else:
         print("Ошибка: неверный день недели.")
-        
-        
-    
