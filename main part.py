@@ -9,6 +9,9 @@ from clear import clear_full
 from find import find
 from save_download import save
 from save_download import download
+from sort_bin_search import sort_schedule
+from sort_bin_search import binary_search
+from statistics import statistics
 
 schedule = {
     "Понедельник": [],
@@ -31,9 +34,10 @@ def main():
         print("4. Очистить расписание на день")
         print("5. Очистить расписание полностью и создать новое")
         print("6. Поиск занятия в расписании")
-        print("0. Выход и сохранение")
+        print("7. Вывести статистику занятий по дням")
+        print("0. Выход")
         print("")
-        choice = input("Выберите действие (0-6): ")
+        choice = input("Выберите действие (0-7): ")
         if choice == '1':
             screen(schedule)
         elif choice == '2':
@@ -46,12 +50,14 @@ def main():
             clear_full(schedule)
         elif choice == '6':
             find(schedule)
+        elif choice == '7':
+            statistics(schedule)
         elif choice == '0':
             save(schedule)
             print("Выход из программы.")
             break
         else:
-            print("Неверный ввод. Выберите от 0 до 6.") 
+            print("Неверный ввод. Выберите от 0 до 7.") 
             
 if __name__ == "__main__":
     main()
