@@ -3,6 +3,7 @@ from sort_bin_search import binary_search
 
 def find(schedule):
     class_name = input("Введите название занятия для поиска: ").strip()
+    class_name = class_name.capitalize()
     if not class_name:
         print("Ошибка: пожалуйста, введите название занятия.")
         return
