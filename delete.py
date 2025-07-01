@@ -3,13 +3,25 @@ def delete(current_schedule):
     day = day.capitalize()
     if day in current_schedule:
         if current_schedule[day]:
-            class_name = input("Введите название занятия для удаления: ")
-            if class_name in current_schedule[day]:
-                current_schedule[day].remove(class_name)
-                print(f"Занятие '{class_name}' удалено с {day}.")
-            else:
-                print(f"Ошибка: занятие '{class_name}' не найдено в этот день.")
+            print(f"\nЗанятия на {day}:")
+            for i, class_name in enumerate(current_schedule[day], 1):
+                print(f"{i}. {class_name}")
+            number_str = input("Введите номер занятия для удаления: ")
+
+            if not number_str.isdigit():
+                print("Ошибка: введите целое число.")
+                return
+            number = int(number_str)
+            if number < 1 or number > len(current_schedule[day]):
+                print("Ошибка: неверный номер занятия.")
+                return
+
+            removed_class = current_schedule[day].pop(number - 1)
+            print(f"Занятие '{removed_class}' удалено с {day}.")
         else:
             print(f"В {day} нет занятий для удаления.")
     else:
         print("Ошибка: неверный день недели.")
+        
+        
+    
