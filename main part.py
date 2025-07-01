@@ -11,7 +11,7 @@ from save_download import save
 from save_download import download
 from sort_bin_search import sort_schedule
 from sort_bin_search import binary_search
-from statistics import statistics
+from statistics import stat
 
 schedule = {
     "Понедельник": [],
