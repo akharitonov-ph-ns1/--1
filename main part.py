@@ -51,7 +51,7 @@ def main():
         elif choice == '6':
             find(schedule)
         elif choice == '7':
-            statistics(schedule)
+            stat(schedule)
         elif choice == '0':
             save(schedule)
             print("Выход из программы.")
